@@ -8,7 +8,8 @@ check() {
     echo "PASS  $name"
   else
     echo "FAIL  $name (expected: $expected, got: $actual)"
-FAILED=1 fi 
+FAILED=1 
+fi 
 } 
 check "HTTP status is 200" "200" \
   "$(curl -s -o /dev/null -w '%{http_code}' "$URL")"
